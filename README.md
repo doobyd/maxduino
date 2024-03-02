@@ -1,1 +1,4 @@
 # maxduino
+The purpose of this project is to provide Arduino like experience for Maximator FPGA board (https://maximator-fpga.org). This board is equipped with arduino connector and MAX10 FPGA.
+FPGA stands for Field Programmable Gate Array. There are soft-core processors for FPGAs available, so MAX10 can be turned into microcontroller. Also different connectivity such as I2C, SPI or UART can be added to the design. MAX10 design is created and developped in Quartus IDE, which comes with Nios2 processor, which will be used in this design. There are plenty of soft-core processor available on the Internet.
+For software development Eclipse with special set of plugins may be used. Register access can be achieved to handle specific blocks inside the FPGA design.
