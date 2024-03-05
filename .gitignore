@@ -1,1 +1,7 @@
 db/
+.qsys_edit/
+maxduino.ipregen.rpt
+srcs/top_system/top_system.BAK.qsys
+srcs/top_system/top_system.sopcinfo
+srcs/top_system/top_system/
+
