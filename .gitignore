@@ -4,4 +4,8 @@ maxduino.ipregen.rpt
 srcs/top_system/top_system.BAK.qsys
 srcs/top_system/top_system.sopcinfo
 srcs/top_system/top_system/
-
+incremental_db/
+output_files/
+simulation/
+*.bak
+top_system.sopcinfo
