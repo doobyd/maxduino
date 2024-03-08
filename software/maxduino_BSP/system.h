@@ -4,7 +4,7 @@
  * Machine generated for CPU 'processor' in SOPC Builder design 'top_system'
  * SOPC Builder design path: D:/dooby/git_repos/maxduino/top_system.sopcinfo
  *
- * Generated: Thu Mar 07 11:29:00 CET 2024
+ * Generated: Fri Mar 08 10:59:38 CET 2024
  */
 
 /*
@@ -162,24 +162,24 @@
 #define ALT_NUM_EXTERNAL_INTERRUPT_CONTROLLERS 0
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
-#define ALT_STDERR "/dev/console_for_processor"
-#define ALT_STDERR_BASE 0x9000
-#define ALT_STDERR_DEV console_for_processor
-#define ALT_STDERR_IS_JTAG_UART
+#define ALT_STDERR "/dev/uart_0"
+#define ALT_STDERR_BASE 0x9060
+#define ALT_STDERR_DEV uart_0
+#define ALT_STDERR_IS_UART
 #define ALT_STDERR_PRESENT
-#define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
-#define ALT_STDIN "/dev/console_for_processor"
-#define ALT_STDIN_BASE 0x9000
-#define ALT_STDIN_DEV console_for_processor
-#define ALT_STDIN_IS_JTAG_UART
+#define ALT_STDERR_TYPE "altera_avalon_uart"
+#define ALT_STDIN "/dev/uart_0"
+#define ALT_STDIN_BASE 0x9060
+#define ALT_STDIN_DEV uart_0
+#define ALT_STDIN_IS_UART
 #define ALT_STDIN_PRESENT
-#define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
-#define ALT_STDOUT "/dev/console_for_processor"
-#define ALT_STDOUT_BASE 0x9000
-#define ALT_STDOUT_DEV console_for_processor
-#define ALT_STDOUT_IS_JTAG_UART
+#define ALT_STDIN_TYPE "altera_avalon_uart"
+#define ALT_STDOUT "/dev/uart_0"
+#define ALT_STDOUT_BASE 0x9060
+#define ALT_STDOUT_DEV uart_0
+#define ALT_STDOUT_IS_UART
 #define ALT_STDOUT_PRESENT
-#define ALT_STDOUT_TYPE "altera_avalon_jtag_uart"
+#define ALT_STDOUT_TYPE "altera_avalon_uart"
 #define ALT_SYSTEM_NAME "top_system"
 #define ALT_SYS_CLK_TICKS_PER_SEC SYSTEM_TIMER_PROCESSOR_TICKS_PER_SEC
 #define ALT_TIMESTAMP_CLK_TIMER_DEVICE_TYPE NONE_TIMER_DEVICE_TYPE

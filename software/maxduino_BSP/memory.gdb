@@ -3,7 +3,7 @@
 # Machine generated for CPU 'processor' in SOPC Builder design 'top_system'
 # SOPC Builder design path: D:/dooby/git_repos/maxduino/top_system.sopcinfo
 #
-# Generated: Thu Mar 07 11:29:00 CET 2024
+# Generated: Fri Mar 08 10:59:38 CET 2024
 
 # DO NOT MODIFY THIS FILE
 #

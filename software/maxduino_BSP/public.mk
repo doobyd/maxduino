@@ -173,17 +173,20 @@ ELF_PATCH_FLAG  += --simulation_enabled false
 # multiple inheritance and exceptions are not supported. If false, adds 
 # -DALT_NO_C_PLUS_PLUS to ALT_CPPFLAGS in public.mk, and reduces code 
 # footprint. none 
-# setting hal.enable_c_plus_plus is true
+# setting hal.enable_c_plus_plus is false
+ALT_CPPFLAGS += -DALT_NO_C_PLUS_PLUS
 
 # When your application exits, close file descriptors, call C++ destructors, 
 # etc. Code footprint can be reduced by disabling clean exit. If disabled, adds 
 # -DALT_NO_CLEAN_EXIT to ALT_CPPFLAGS -D'exit(a)=_exit(a)' in public.mk. none 
-# setting hal.enable_clean_exit is true
+# setting hal.enable_clean_exit is false
+ALT_CPPFLAGS += -DALT_NO_CLEAN_EXIT -D'exit(a)=_exit(a)'
 
 # Add exit() support. This option increases code footprint if your "main()" 
 # routine does "return" or call "exit()". If false, adds -DALT_NO_EXIT to 
 # ALT_CPPFLAGS in public.mk, and reduces footprint none 
-# setting hal.enable_exit is true
+# setting hal.enable_exit is false
+ALT_CPPFLAGS += -DALT_NO_EXIT
 
 # Causes code to be compiled with gprof profiling enabled and the application 
 # ELF to be linked with the GPROF library. If true, adds -DALT_PROVIDE_GMON to 
@@ -198,7 +201,8 @@ ELF_PATCH_FLAG  += --simulation_enabled false
 # devices. If true, adds -DALT_USE_DIRECT_DRIVERS to ALT_CPPFLAGS in public.mk. 
 # The Altera Host and read-only ZIP file systems can't be used if 
 # hal.enable_lightweight_device_driver_api is true. 
-# setting hal.enable_lightweight_device_driver_api is false
+# setting hal.enable_lightweight_device_driver_api is true
+ALT_CPPFLAGS += -DALT_USE_DIRECT_DRIVERS
 
 # Adds code to emulate multiply and divide instructions in case they are 
 # executed but aren't present in the CPU. Normally this isn't required because 
@@ -217,7 +221,8 @@ ALT_CPPFLAGS += -DALT_NO_INSTRUCTION_EMULATION
 # access routines) to fail. You can define a symbol provided by each driver to 
 # prevent it from being removed. If true, adds -DALT_USE_SMALL_DRIVERS to 
 # ALT_CPPFLAGS in public.mk. none 
-# setting hal.enable_reduced_device_drivers is false
+# setting hal.enable_reduced_device_drivers is true
+ALT_CPPFLAGS += -DALT_USE_SMALL_DRIVERS
 
 # Turns on HAL runtime stack checking feature. Enabling this setting causes 
 # additional code to be placed into each subroutine call to generate an 
@@ -238,7 +243,9 @@ ALT_CPPFLAGS += -DALT_NO_INSTRUCTION_EMULATION
 # are removed such as floating-point support in printf(), stdin input routines, 
 # and buffered I/O. The small C library is not compatible with Micrium 
 # MicroC/OS-II. If true, adds -msmallc to ALT_LDFLAGS in public.mk. none 
-# setting hal.enable_small_c_library is false
+# setting hal.enable_small_c_library is true
+ALT_LDFLAGS += -msmallc
+ALT_CPPFLAGS += -DSMALL_C_LIB
 
 # Enable SOPC Builder System ID. If a System ID SOPC Builder component is 
 # connected to the CPU associated with this BSP, it will be enabled in the 
@@ -249,7 +256,8 @@ ALT_CPPFLAGS += -DALT_NO_INSTRUCTION_EMULATION
 # application .elf file (and BSP it is linked against) corresponds to the 
 # hardware design on the target. If false, adds --accept-bad-sysid to 
 # SOPC_SYSID_FLAG in public.mk. none 
-# setting hal.enable_sopc_sysid_check is true
+# setting hal.enable_sopc_sysid_check is false
+SOPC_SYSID_FLAG += --accept-bad-sysid
 
 # C/C++ compiler to generate (do not generate) GP-relative accesses. 'none' 
 # tells the compilter not to generate GP-relative accesses. 'local' will 
@@ -339,18 +347,18 @@ ALT_CFLAGS += -mgpopt=global
 
 # Slave descriptor of STDERR character-mode device. This setting is used by the 
 # ALT_STDERR family of defines in system.h. none 
-# setting hal.stderr is console_for_processor
-ELF_PATCH_FLAG  += --stderr_dev console_for_processor
+# setting hal.stderr is uart_0
+ELF_PATCH_FLAG  += --stderr_dev uart_0
 
 # Slave descriptor of STDIN character-mode device. This setting is used by the 
 # ALT_STDIN family of defines in system.h. none 
-# setting hal.stdin is console_for_processor
-ELF_PATCH_FLAG  += --stdin_dev console_for_processor
+# setting hal.stdin is uart_0
+ELF_PATCH_FLAG  += --stdin_dev uart_0
 
 # Slave descriptor of STDOUT character-mode device. This setting is used by the 
 # ALT_STDOUT family of defines in system.h. none 
-# setting hal.stdout is console_for_processor
-ELF_PATCH_FLAG  += --stdout_dev console_for_processor
+# setting hal.stdout is uart_0
+ELF_PATCH_FLAG  += --stdout_dev uart_0
 
 
 #------------------------------------------------------------------------------
